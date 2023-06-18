@@ -1,1 +1,45 @@
-<p>login works!</p>
+<div class="container">
+  <div class="row d-flex align-items-center mt-2 pt-1" >
+    <div class="col-md-6">
+      <form [formGroup]="LoginForm" (ngSubmit)="console()" class="example-form">
+
+        <mat-radio-group [formControlName]="'userRole'"
+        aria-label="Select an option" class="mb-5 ">
+          <mat-radio-button  value="Teacher" >
+            <p  class="btn btn-danger me-3 mt-2">Teacher</p>
+          </mat-radio-button>
+          <mat-radio-button  value="Student">
+            <p  class="btn btn-success mt-2" >Student</p>
+          </mat-radio-button>
+        </mat-radio-group>
+
+        <mat-form-field class="example-full-width my-1">
+          <mat-label>UserName</mat-label>
+          <input type="text" matInput [formControlName]="'userName'" placeholder="userName">
+          <mat-error *ngIf="LoginForm.controls['userName'].errors && LoginForm.controls['userName'].errors!['required']">
+            UserName is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width my-1">
+          <mat-label>Email</mat-label>
+          <input type="email" matInput [formControlName]="'email'" placeholder="Ex. pat@example.com">
+          <mat-error *ngIf="LoginForm.controls['email'].errors && LoginForm.controls['email'].errors!['email']">
+            Please enter a valid email address
+          </mat-error>
+          <mat-error *ngIf="LoginForm.controls['email'].errors && LoginForm.controls['email'].errors!['required']">
+            Email is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+
+
+        <div class="mt-1 ">
+          <button type="submit" class="w-50 btn btn-success text-white"[disabled]="!LoginForm.valid">Login</button>
+          <button type="button" class="w-50 btn btn-link" style="text-decoration: none;"> Sign Up</button>
+        </div>
+      </form>
+    </div>
+    <div class="col-md-6">
+      <img src="../../../../assets/images/Wavy_Tech-28_Single-10.jpg" alt="login" style="max-width: 100%;max-height: 100%;">
+    </div>
+  </div>
+</div>

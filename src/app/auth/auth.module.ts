@@ -6,6 +6,8 @@ import { HomeComponent } from './components/home/home.component';
 import { RouterModule } from '@angular/router';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { SharedModule } from '../shared/shared.module';
+import { ReactiveFormsModule } from '@angular/forms';
+import { AuthRoutingModule } from './auth-routing.module';
 
 
 
@@ -19,7 +21,9 @@ import { SharedModule } from '../shared/shared.module';
     CommonModule,
     RouterModule,
     CarouselModule,
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule,
+    AuthRoutingModule
   ],
   exports: [
     LoginComponent,

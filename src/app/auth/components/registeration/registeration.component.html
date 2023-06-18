@@ -1,1 +1,101 @@
-<p>registeration works!</p>
+<div class="container">
+  <div class="row d-flex align-items-center mt-4 pt-4">
+    <div class="col-md-6">
+      <form [formGroup]="RegForm" (ngSubmit)="console()" class="example-form">
+
+        <mat-form-field class="example-full-width my-1">
+          <mat-label>First Name</mat-label>
+          <input type="text" matInput [formControlName]="'FirstName'" placeholder="First Name">
+          <mat-error *ngIf="!RegForm.get('FirstName')?.valid
+            && RegForm.get('FirstName')?.touched
+            && RegForm.get('FirstName')?.errors?.['required']">
+             First Name is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+
+
+        <mat-form-field class="example-full-width my-1">
+          <mat-label>Second Name</mat-label>
+          <input type="text" matInput [formControlName]="'SecondName'" placeholder="Second Name">
+          <mat-error *ngIf="!RegForm.get('SecondName')?.valid
+            && RegForm.get('SecondName')?.touched
+            && RegForm.get('SecondName')?.errors?.['required']">
+            Second Name is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+
+
+        <mat-form-field class="example-full-width my-1">
+          <mat-label>Email</mat-label>
+          <input type="email" matInput [formControlName]="'email'" placeholder="mohammedawaad26@gmail.com">
+          <mat-error *ngIf="!RegForm.get('email')?.valid && RegForm.get('email')?.touched
+            && RegForm.get('email')?.errors?.['required']">
+            Email is <strong>required</strong>
+          </mat-error>
+          <mat-error *ngIf="!RegForm.get('email')?.valid && RegForm.get('email')?.touched
+            && RegForm.get('email')?.errors?.['email']">
+            Please enter a valid email address <strong>mohammedawaad26@gmail.com</strong>
+          </mat-error>
+        </mat-form-field>
+
+
+        <mat-form-field class="example-full-width my-1">
+          <mat-label>Password</mat-label>
+          <input type="password" matInput [formControlName]="'password'" placeholder="Password">
+          <mat-error
+            *ngIf="!RegForm.get('password')?.valid
+            && RegForm.get('password')?.touched
+            &&  RegForm.get('password')?.errors?.['required']">
+            password is <strong>required</strong>
+          </mat-error>
+          <mat-error
+            *ngIf="!RegForm.get('password')?.valid
+            && RegForm.get('password')?.touched
+            &&  RegForm.get('password')?.errors?.['minlength']">
+            MinLength is 6 digits
+          </mat-error>
+          <mat-error *ngIf="
+                      RegForm.get('password')?.touched && RegForm.get('confirmPassword')?.touched
+                      && RegForm.value.password != RegForm.value.ConfirmpPassword">
+            Passwords don't match !!
+          </mat-error>
+        </mat-form-field>
+
+
+        <mat-form-field class="example-full-width my-1">
+          <mat-label>confirm Password</mat-label>
+          <input type="password" matInput [formControlName]="'confirmPassword'" placeholder="confirm Password">
+          <mat-error
+            *ngIf="!RegForm.get('confirmPassword')?.valid
+            && RegForm.get('confirmPassword')?.touched
+            &&  RegForm.get('confirmPassword')?.errors?.['required']">
+            confirmPassword is <strong>required</strong>
+          </mat-error>
+          <mat-error
+            *ngIf="!RegForm.get('confirmPassword')?.valid
+            && RegForm.get('confirmPassword')?.touched
+            &&  RegForm.get('confirmPassword')?.errors?.['minlength']">
+            MinLength is 6 digits
+          </mat-error>
+          <mat-error
+            *ngIf="RegForm.get('confirmPassword')?.valid
+                      && RegForm.get('confirmPassword')?.touched &&
+           RegForm.value.password != RegForm.value.ConfirmpPassword">
+            Passwords don't match !!
+          </mat-error>
+          </mat-form-field>
+
+
+        <div class="mt-1 ">
+                    <button type="submit"
+                      [disabled]="RegForm.invalid || RegForm.get('Confirmpassword')?.touched && RegForm.value.Password != RegForm.value.Confirmpassword"
+                      class="btn btn-success text-white w-50">Create Account</button>
+          <button type="button" class="w-50 btn btn-link" style="text-decoration: none;">Sign In</button>
+        </div>
+      </form>
+    </div>
+    <div class="col-md-6">
+    <img src="../../../../assets/images/signup.jpg" alt="sign up" style="max-width: 100%;max-height: 100%;">
+    </div>
+  </div>
+</div>

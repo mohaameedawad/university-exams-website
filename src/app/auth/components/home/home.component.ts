@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
     customOptions: OwlOptions = {
-     loop: true,
+    loop: true,
     autoplay:true,
     autoplayTimeout:2500,
     autoplayHoverPause:true,
@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
     pullDrag: true,
     dots: false,
     navSpeed: 1000,
-    navText: ['<i class="fa-solid fa-arrow-left text-body"></i>', '<i class="fa-solid fa-arrow-right text-body"></i>'],
+    navText: ['',''],
     responsive: {
       0: {
         items: 1
@@ -39,7 +39,7 @@ export class HomeComponent implements OnInit {
         items: 1
       }
     },
-    nav: true
+    nav:false
   }
 }
 
