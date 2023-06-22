@@ -8,6 +8,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SharedModule } from './shared/shared.module';
 import { AuthModule } from './auth/auth.module';
+import { TeacherModule } from './teacher/teacher.module';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { AuthModule } from './auth/auth.module';
     LayoutModule,
     NgbModule,
     SharedModule,
-    AuthModule
+    AuthModule,
+    TeacherModule
   ],
   providers: [],
   bootstrap: [AppComponent]

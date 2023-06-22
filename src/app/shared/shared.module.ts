@@ -10,6 +10,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import {MatRadioModule} from '@angular/material/radio';
 import { RouterModule } from '@angular/router';
+import {MatCardModule} from '@angular/material/card';
 
 
 
@@ -17,6 +18,7 @@ import { RouterModule } from '@angular/router';
   declarations: [HeaderComponent],
   imports: [
     CommonModule,
+    RouterModule,
     MatToolbarModule,
     MatSidenavModule,
     MatIconModule,
@@ -25,7 +27,8 @@ import { RouterModule } from '@angular/router';
     MatButtonModule,
     MatInputModule,
     MatRadioModule,
-    RouterModule
+    MatCardModule
+
   ],
   exports: [
     HeaderComponent,
@@ -37,6 +40,7 @@ import { RouterModule } from '@angular/router';
     MatButtonModule,
     MatInputModule,
     MatRadioModule,
+    MatCardModule
   ]
 })
 export class SharedModule { }
